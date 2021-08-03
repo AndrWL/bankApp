@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="1085" y="-585"/>
         </scene>
-        <!--View Controller-->
+        <!--Registration View Controller-->
         <scene sceneID="8Wl-nb-nkm">
             <objects>
-                <viewController id="TCw-Z2-yYi" sceneMemberID="viewController">
+                <viewController id="TCw-Z2-yYi" customClass="RegistrationViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="psW-q9-I9c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,17 +52,23 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="oWa-hM-zbR">
                                 <rect key="frame" x="50" y="221.33333333333337" width="314" height="91"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZHV-g6-nAN">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZHV-g6-nAN">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="userNameAction:" destination="TCw-Z2-yYi" eventType="editingDidEnd" id="5db-Lg-myu"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="waJ-Wx-Fvc">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="waJ-Wx-Fvc">
                                         <rect key="frame" x="0.0" y="56.999999999999972" width="314" height="34"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="passwordAction:" destination="TCw-Z2-yYi" eventType="editingDidEnd" id="Udz-xJ-zet"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -82,7 +88,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="W9E-6o-Qdu" kind="presentation" modalPresentationStyle="fullScreen" id="Fyr-r6-hRM"/>
+                                    <segue destination="W9E-6o-Qdu" kind="presentation" identifier="goToMain" id="Fyr-r6-hRM"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4rX-X3-kPA">
@@ -116,15 +122,19 @@
                             <constraint firstItem="r2L-PT-fhc" firstAttribute="centerX" secondItem="psW-q9-I9c" secondAttribute="centerX" id="y2I-IN-8lu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="passwordTextField" destination="waJ-Wx-Fvc" id="0hu-0C-AlH"/>
+                        <outlet property="userNameTextfield" destination="ZHV-g6-nAN" id="Mtw-Cx-T3E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5jt-Zc-pz9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1072" y="32"/>
+            <point key="canvasLocation" x="-857" y="32"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jpI-qj-jUi">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="W9E-6o-Qdu" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="W9E-6o-Qdu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ki0-aw-BeP"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="ETG-K7-3j5">
