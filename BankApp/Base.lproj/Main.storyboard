@@ -5,13 +5,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Transactions-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CardsViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,8 +145,8 @@
                         <color key="selectedImageTintColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="kps-TR-46b"/>
                         <segue destination="okh-Gy-IU4" kind="relationship" relationship="viewControllers" id="uCh-hd-oRa"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="kps-TR-46b"/>
                         <segue destination="EeL-Yr-rbp" kind="relationship" relationship="viewControllers" id="t8K-d5-CcG"/>
                         <segue destination="gK5-wG-kyz" kind="relationship" relationship="viewControllers" id="O9W-US-ea8"/>
                     </connections>
@@ -173,22 +174,73 @@
         <!--cards-->
         <scene sceneID="WXw-9a-ykZ">
             <objects>
-                <viewController id="okh-Gy-IU4" sceneMemberID="viewController">
+                <viewController id="okh-Gy-IU4" customClass="CardsViewController" customModule="BankApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dj4-92-Iil">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xMv-RQ-xlG">
+                                <rect key="frame" x="10" y="126" width="394" height="329"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="329" id="8CT-iV-BdX"/>
+                                    <constraint firstAttribute="width" constant="394" id="aUI-Sc-yJo"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5wq-Qv-TFI">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="oNO-vr-7uE" customClass="CardCell" customModule="BankApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="57.666666666666664" width="375" height="214"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ysn-hI-Nyu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card_1" translatesAutoresizingMaskIntoConstraints="NO" id="SKR-V1-cCp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="214"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="SKR-V1-cCp" secondAttribute="trailing" id="2kr-tq-VSH"/>
+                                                <constraint firstItem="SKR-V1-cCp" firstAttribute="top" secondItem="Ysn-hI-Nyu" secondAttribute="top" id="5Th-f0-7EC"/>
+                                                <constraint firstAttribute="bottom" secondItem="SKR-V1-cCp" secondAttribute="bottom" id="YK9-Zq-rwY"/>
+                                                <constraint firstItem="SKR-V1-cCp" firstAttribute="leading" secondItem="Ysn-hI-Nyu" secondAttribute="leading" id="owe-UB-tcp"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="375" height="214"/>
+                                        <connections>
+                                            <outlet property="cardImage" destination="SKR-V1-cCp" id="N86-OJ-Uzv"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wLd-IP-YP9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wLd-IP-YP9" firstAttribute="trailing" secondItem="xMv-RQ-xlG" secondAttribute="trailing" constant="10" id="UBa-jD-vUn"/>
+                            <constraint firstItem="xMv-RQ-xlG" firstAttribute="top" secondItem="wLd-IP-YP9" secondAttribute="top" constant="126" id="c4F-WQ-I4m"/>
+                            <constraint firstItem="xMv-RQ-xlG" firstAttribute="centerX" secondItem="Dj4-92-Iil" secondAttribute="centerX" id="lb8-ex-6ic"/>
+                            <constraint firstItem="xMv-RQ-xlG" firstAttribute="leading" secondItem="wLd-IP-YP9" secondAttribute="leading" constant="10" id="mDc-ia-7x4"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="cards" image="inactive" id="upj-3D-beh"/>
+                    <connections>
+                        <outlet property="collectionView" destination="xMv-RQ-xlG" id="HE7-lY-xVx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="glf-RB-dyo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1257" y="149"/>
+            <point key="canvasLocation" x="2989.8550724637685" y="31.793478260869566"/>
         </scene>
     </scenes>
     <resources>
         <image name="active" width="24" height="24"/>
+        <image name="card_1" width="389" height="273"/>
         <image name="cards" width="24" height="24"/>
         <image name="creditcard.circle.fill" catalog="system" width="128" height="121"/>
         <image name="eurosign.circle.fill" catalog="system" width="128" height="121"/>
