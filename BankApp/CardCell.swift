@@ -12,4 +12,6 @@ class CardCell: UICollectionViewCell {
     
      weak var cardImage: UIImageView!
     
+   
+    
 }

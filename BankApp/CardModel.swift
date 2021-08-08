@@ -8,7 +8,27 @@
 import UIKit
 
 struct CardModel {
+
+    let id = UUID()
+    let cardImage: UIImage
+    let balance: Int
+    let transActionStory: [TransActionStory]
     
-    let id: Int?
-    let cardImage: UIImage?
 }
+
+
+struct TransActionStory {
+    
+    let date = Date()
+    let sum: Int
+    let comment: String
+    
+ 
+}
+
+
+
+
+
+
+
