@@ -13,9 +13,13 @@
 		7F019A9426B593E7002B6E69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F019A9226B593E7002B6E69 /* Main.storyboard */; };
 		7F019A9626B593E8002B6E69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F019A9526B593E8002B6E69 /* Assets.xcassets */; };
 		7F019A9926B593E8002B6E69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F019A9726B593E8002B6E69 /* LaunchScreen.storyboard */; };
+		7F11879626C27C3700C79420 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F11879526C27C3700C79420 /* RootViewController.swift */; };
+		7F11879826C27D5500C79420 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F11879726C27D5500C79420 /* LaunchViewController.swift */; };
 		7F29AD4F26B99BF7009EEAD3 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F29AD4E26B99BF7009EEAD3 /* CardModel.swift */; };
 		7F321D3D26BD31E500BF0DAA /* IsHidden NavigationControllerBar .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F321D3C26BD31E500BF0DAA /* IsHidden NavigationControllerBar .swift */; };
-		7F37F25026B6884E00E00522 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37F24F26B6884E00E00522 /* RegistrationViewController.swift */; };
+		7F37F25026B6884E00E00522 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37F24F26B6884E00E00522 /* LoginViewController.swift */; };
+		7F3F3E1326C1475F00C5383D /* CardSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F3E1226C1475F00C5383D /* CardSelectionViewController.swift */; };
+		7F3F3E1926C1912B00C5383D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F3E1826C1912B00C5383D /* AuthViewController.swift */; };
 		7F843F1D26B94EBD005A41AE /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F843F1C26B94EBD005A41AE /* CardCell.swift */; };
 		7F8C076326BECDC200E896B5 /* CardBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8C076226BECDC200E896B5 /* CardBannerView.swift */; };
 		7FB69A9126BBE61C009E7384 /* UIButton  + Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69A9026BBE61C009E7384 /* UIButton  + Extension .swift */; };
@@ -36,9 +40,13 @@
 		7F019A9526B593E8002B6E69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F019A9826B593E8002B6E69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F019A9A26B593E8002B6E69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F11879526C27C3700C79420 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		7F11879726C27D5500C79420 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		7F29AD4E26B99BF7009EEAD3 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		7F321D3C26BD31E500BF0DAA /* IsHidden NavigationControllerBar .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IsHidden NavigationControllerBar .swift"; sourceTree = "<group>"; };
-		7F37F24F26B6884E00E00522 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		7F37F24F26B6884E00E00522 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7F3F3E1226C1475F00C5383D /* CardSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectionViewController.swift; sourceTree = "<group>"; };
+		7F3F3E1826C1912B00C5383D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		7F843F1C26B94EBD005A41AE /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		7F8C076226BECDC200E896B5 /* CardBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBannerView.swift; sourceTree = "<group>"; };
 		7FB69A9026BBE61C009E7384 /* UIButton  + Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton  + Extension .swift"; sourceTree = "<group>"; };
@@ -105,9 +113,13 @@
 		7F6BC25C26BAF61700578399 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7F11879526C27C3700C79420 /* RootViewController.swift */,
+				7F11879726C27D5500C79420 /* LaunchViewController.swift */,
+				7F37F24F26B6884E00E00522 /* LoginViewController.swift */,
+				7F3F3E1826C1912B00C5383D /* AuthViewController.swift */,
 				7F019A9026B593E7002B6E69 /* CardsViewController.swift */,
-				7F37F24F26B6884E00E00522 /* RegistrationViewController.swift */,
 				7FB69A9A26BC5ADF009E7384 /* MainTabbarController.swift */,
+				7F3F3E1226C1475F00C5383D /* CardSelectionViewController.swift */,
 				7FB69A9C26BC5B9E009E7384 /* AccountVieController.swift */,
 				7FB69A9E26BC5C22009E7384 /* MoreViewController.swift */,
 			);
@@ -206,15 +218,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F843F1D26B94EBD005A41AE /* CardCell.swift in Sources */,
+				7F3F3E1326C1475F00C5383D /* CardSelectionViewController.swift in Sources */,
+				7F11879626C27C3700C79420 /* RootViewController.swift in Sources */,
 				7FB69A9F26BC5C22009E7384 /* MoreViewController.swift in Sources */,
 				7F019A9126B593E7002B6E69 /* CardsViewController.swift in Sources */,
+				7F3F3E1926C1912B00C5383D /* AuthViewController.swift in Sources */,
 				7F8C076326BECDC200E896B5 /* CardBannerView.swift in Sources */,
 				7FB69A9526BBF3BB009E7384 /* UIlabel + Extension.swift in Sources */,
 				7F019A8D26B593E7002B6E69 /* AppDelegate.swift in Sources */,
 				7F321D3D26BD31E500BF0DAA /* IsHidden NavigationControllerBar .swift in Sources */,
 				7FB69A9926BC3A9C009E7384 /* StackView + Extension .swift in Sources */,
-				7F37F25026B6884E00E00522 /* RegistrationViewController.swift in Sources */,
+				7F37F25026B6884E00E00522 /* LoginViewController.swift in Sources */,
 				7FB69A9B26BC5ADF009E7384 /* MainTabbarController.swift in Sources */,
+				7F11879826C27D5500C79420 /* LaunchViewController.swift in Sources */,
 				7F019A8F26B593E7002B6E69 /* SceneDelegate.swift in Sources */,
 				7F29AD4F26B99BF7009EEAD3 /* CardModel.swift in Sources */,
 				7FB69A9126BBE61C009E7384 /* UIButton  + Extension .swift in Sources */,

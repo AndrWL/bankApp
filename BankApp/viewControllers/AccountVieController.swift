@@ -14,5 +14,8 @@ class AccountVieController: UIViewController {
         super.viewDidLoad()
         isHidden()
         view.backgroundColor = .yellow
+        
     }
+    
+    
 }

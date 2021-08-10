@@ -12,9 +12,9 @@ import UIKit
 class CardsViewController: UIViewController {
 
  
-    var banner: CardBanner!
-  
-
+    
+    
+    private let addCardButtom = UIButton(backgroundColor: .darkGray, titleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), cornerRadius: 10)
     var cards: [CardModel] = [CardModel(cardImage: UIImage(named: "card_1")!, balance: 1000, transActionStory: [TransActionStory(sum: 30, comment: "eat"),     TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
         TransActionStory(sum: 10, comment: "healthy"),
         TransActionStory(sum: 110, comment: "study")]),
@@ -24,68 +24,69 @@ class CardsViewController: UIViewController {
         TransActionStory(sum: 110, comment: "study")]),
         CardModel( cardImage: UIImage(named: "card_1")!, balance: 50000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
             TransActionStory(sum: 10, comment: "healthy"),
-            TransActionStory(sum: 110, comment: "study")]),
-        CardModel(cardImage: UIImage(named: "card_2")!, balance: 200, transActionStory: [TransActionStory(sum: 30, comment: "eat"),     TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
-            TransActionStory(sum: 10, comment: "healthy"),
-            TransActionStory(sum: 110, comment: "study")]),
-        CardModel(cardImage: UIImage(named: "card_1")!, balance: 20000, transActionStory: [TransActionStory(sum: 30, comment: "eat"),     TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
-            TransActionStory(sum: 10, comment: "healthy"),
-            TransActionStory(sum: 110, comment: "study")]),
-        CardModel(cardImage: UIImage(named: "card_2")!, balance: 131313, transActionStory: [TransActionStory(sum: 30, comment: "eat"),     TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
-            TransActionStory(sum: 10, comment: "healthy"),
-            TransActionStory(sum: 110, comment: "study")])
-    ]
+            TransActionStory(sum: 110, comment: "study")])]
+      
     
-
-    
-    
-  
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
  
         view.backgroundColor = .darkGray
-        setupBanner()
-        setupCardViewOnBanner()
         
-        isHidden()
+        
+        setupButton()
+        setConstraints()
+         isHidden()
    
 
 }
     
+  
     
-    // setup banner
-    private func setupBanner() {
-        banner = CardBanner(frame: CGRect(x: 0, y: 150, width: view.frame.width, height: 300))
-        banner.backgroundColor = .darkGray
-        view.addSubview(banner)
+   private func setupButton() {
+    
+    view.addSubview(addCardButtom)
+    
+  
+    addCardButtom.translatesAutoresizingMaskIntoConstraints = false
+    
+    let imageButtom = UIImage(systemName: "plus.rectangle.on.rectangle")
+  
+    addCardButtom.setBackgroundImage(imageButtom, for: .normal)
+  
+    addCardButtom.tintColor = .lightGray
+    addCardButtom.addTarget(self, action: #selector(addCard), for: .touchUpInside)
+    
+   
+    
     }
     
-    // setup view on banner
+    @objc private func addCard() {
+        
+        let cardSelectionViewController = CardSelectionViewController()
+        cardSelectionViewController.cards = cards
     
-     private   func setupCardViewOnBanner() {
-        banner.reloadData(numberOfItems: cards.count) { (bannerView, index) -> (UIView) in
-            return self.itemView(at: index)
-        }
+        self.present(cardSelectionViewController, animated: true)
     }
     
-    // setup card Image
-    
-    func itemView(at: Int) -> UIImageView {
-        
-        let imageView: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        let images = cards.map({$0.cardImage})
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = images[at]
-        
-        return imageView
-        
-        
+    private func setConstraints() {
+        NSLayoutConstraint.activate([
+            addCardButtom.widthAnchor.constraint(equalToConstant: 30),
+            addCardButtom.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            addCardButtom.topAnchor.constraint(equalTo: view.topAnchor, constant: +40),
+            addCardButtom.heightAnchor.constraint(equalTo: addCardButtom.widthAnchor)
+           
+    ])
+     
     }
     
+    deinit {
+        print("collection delete")
+    }
+   
 }
+
+
 
 
 

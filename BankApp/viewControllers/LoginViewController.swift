@@ -7,11 +7,11 @@
 
 import UIKit
 
-class RegistrationViewController: UIViewController {
+class LoginViewController: UIViewController {
     
     //let imageLogo = UIImage(named: "")
     let lable = UILabel(text: "🧩 PuzzLe")
-    let myButton = UIButton(title: "Login", backgroundColor: #colorLiteral(red: 0.8321695924, green: 0.985483706, blue: 0.4733308554, alpha: 1), titleColor: .darkGray, cornerRadius: 7)
+    let myButton = UIButton(backgroundColor: #colorLiteral(red: 0.8321695924, green: 0.985483706, blue: 0.4733308554, alpha: 1), titleColor: .darkGray, cornerRadius: 7)
 
     let userName = UITextField(backgroundColor: .lightGray, placeholder: "Username", borderStyle: .roundedRect, textColor: .darkGray)
 
@@ -25,10 +25,10 @@ class RegistrationViewController: UIViewController {
         lable.font = UIFont(name: "Avenir", size: 35)
         lable.textColor = #colorLiteral(red: 0.8321695924, green: 0.985483706, blue: 0.4733308554, alpha: 1)
         
-        
+        isHidden()
         setupConstraints()
         
-        
+     
      
 
        
@@ -49,8 +49,8 @@ class RegistrationViewController: UIViewController {
         view.addSubview(stackView)
         lable.translatesAutoresizingMaskIntoConstraints = false
         myButton.translatesAutoresizingMaskIntoConstraints = false
-        
-        
+        myButton.setTitle("Enter", for: .normal)
+        myButton.addTarget(self, action: #selector(buttomTapped), for: .touchUpInside)
         NSLayoutConstraint.activate([lable.topAnchor.constraint(equalTo: view.topAnchor, constant:  200),
           lable.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
@@ -66,6 +66,19 @@ class RegistrationViewController: UIViewController {
 ])
     }
     
+    @objc private func buttomTapped() {
+        
+      
+        self.dismiss(animated: true)
+        let mainTabbar = MainTabBarController(nibName: "MainTabBarController", bundle: nil)
+        self.navigationController?.pushViewController(mainTabbar, animated: true)
+      
+          }
+       
+    
+    deinit {
+        print("Удален")
+    }
 
 }
 
@@ -78,7 +91,7 @@ struct ViewControllerProvider: PreviewProvider {
     }
     struct ContainerView: UIViewControllerRepresentable {
         
-        let viewController = RegistrationViewController()
+        let viewController = LoginViewController()
         
         func makeUIViewController(context: Context) -> some UIViewController {
             return viewController
