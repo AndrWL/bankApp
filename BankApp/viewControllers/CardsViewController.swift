@@ -12,7 +12,7 @@ import UIKit
 class CardsViewController: UIViewController {
 
  
-    
+    var cardImage: UIImageView?
     
     private let addCardButtom = UIButton(backgroundColor: .darkGray, titleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), cornerRadius: 10)
     var cards: [CardModel] = [CardModel(cardImage: UIImage(named: "card_1")!, balance: 1000, transActionStory: [TransActionStory(sum: 30, comment: "eat"),     TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
@@ -58,6 +58,9 @@ class CardsViewController: UIViewController {
     
    
     
+    }
+    private func setupUIImage() {
+        
     }
     
     @objc private func addCard() {

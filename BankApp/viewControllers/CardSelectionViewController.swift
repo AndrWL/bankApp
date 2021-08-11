@@ -11,19 +11,20 @@ import UIKit
 class CardSelectionViewController: UIViewController {
  
     
+    let layout = UICollectionViewFlowLayout()
+    var collectionView: UICollectionView!
+        
+   
     
-    
-   private let layout = UICollectionViewFlowLayout()
-    private var collectionView: UICollectionView!
     
     var cards: [CardModel] =  [CardModel(cardImage: UIImage(named: "card_1")!, balance: 1000, transActionStory: [TransActionStory(sum: 30, comment: "eat"),     TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
                                                                                                                   TransActionStory(sum: 10, comment: "healthy"),
                                                                                                                   TransActionStory(sum: 110, comment: "study")]),
-                                                                                                                                        
-                                                                                                                  CardModel(cardImage: UIImage(named: "card_2")!, balance: 2000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
+                                                                   
+                                                                                     CardModel(cardImage: UIImage(named: "card_2")!, balance: 2000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
                                                                                                                   TransActionStory(sum: 10, comment: "healthy"),
                                                                                                                   TransActionStory(sum: 110, comment: "study")]),
-                                                                                                                  CardModel( cardImage: UIImage(named: "card_1")!, balance: 50000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
+                                                                                                                  CardModel( cardImage: UIImage(named: "card_3")!, balance: 50000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
                                                                                                                       TransActionStory(sum: 10, comment: "healthy"),
                                                                                                                       TransActionStory(sum: 110, comment: "study")])]
     
@@ -32,64 +33,63 @@ class CardSelectionViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+       
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
+     
         
-        setupCollectionView()
-        collectionView.register(CardCell.self, forCellWithReuseIdentifier: "cellId")
+        
+      
+      
+       
+        collectionView.register(CardCell.self, forCellWithReuseIdentifier: "cell")
+        
+       
+       
+        collectionView.backgroundColor = .black
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        view.addSubview(collectionView)
     }
-    private func setupCollectionView() {
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height), collectionViewLayout: layout)
-         collectionView.translatesAutoresizingMaskIntoConstraints = false
-         view.addSubview(collectionView)
-         layout.scrollDirection = .vertical
-         collectionView.delegate = self
-         collectionView.dataSource = self
-       print(cards)
-     }
+    
+    
+ 
     deinit {
         print("cardsSelection delete")
     }
 }
 
 
-extension CardSelectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension CardSelectionViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-      return  cards.count
+        return cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! CardCell
-        cell.backgroundColor = view.backgroundColor
-        cell.image.image = cards[indexPath.row].cardImage
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CardCell
+        let card = cards[indexPath.row]
+        cell.configureCell(image: card.cardImage, text: "\(card.balance) $")
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: view.frame.width - 40, height: 80)
+    }
+    
+    
+    
+}
+
+
    
     
     
-}
 
 
-extension CardSelectionViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        
-        return CGSize(width: 100, height: 200)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        
-        return 0
-    }
-    
-    
-    
-}
+
+
 
 
 import SwiftUI
