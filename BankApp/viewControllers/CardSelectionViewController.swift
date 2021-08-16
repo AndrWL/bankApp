@@ -17,16 +17,7 @@ class CardSelectionViewController: UIViewController {
    
     
     
-    var cards: [CardModel] =  [CardModel(cardImage: UIImage(named: "card_1")!, balance: 1000, transActionStory: [TransActionStory(sum: 30, comment: "eat"),     TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
-                                                                                                                  TransActionStory(sum: 10, comment: "healthy"),
-                                                                                                                  TransActionStory(sum: 110, comment: "study")]),
-                                                                   
-                                                                                     CardModel(cardImage: UIImage(named: "card_2")!, balance: 2000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
-                                                                                                                  TransActionStory(sum: 10, comment: "healthy"),
-                                                                                                                  TransActionStory(sum: 110, comment: "study")]),
-                                                                                                                  CardModel( cardImage: UIImage(named: "card_3")!, balance: 50000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
-                                                                                                                      TransActionStory(sum: 10, comment: "healthy"),
-                                                                                                                      TransActionStory(sum: 110, comment: "study")])]
+    var cards: [CardModel] =  []
     
     
     
@@ -68,7 +59,8 @@ extension CardSelectionViewController: UICollectionViewDelegate, UICollectionVie
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CardCell
         let card = cards[indexPath.row]
-        cell.configureCell(image: card.cardImage, text: "\(card.balance) $")
+        guard let image = UIImage(named: card.cardImage) else{ return UICollectionViewCell() }
+        cell.configureCell(image: image, text: "\(card.balance) $")
         
         return cell
     }

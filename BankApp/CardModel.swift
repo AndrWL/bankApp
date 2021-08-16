@@ -10,7 +10,7 @@ import UIKit
 struct CardModel {
 
     let id = UUID()
-    let cardImage: UIImage
+    let cardImage: String
     let balance: Int
     let transActionStory: [TransActionStory]
     
