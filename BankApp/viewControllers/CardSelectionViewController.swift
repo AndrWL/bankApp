@@ -7,15 +7,20 @@
 
 import UIKit
 
-
+protocol SelectedCardDelegate {
+    
+    func getCard(selectedCard: CardModel)
+    
+    
+}
 class CardSelectionViewController: UIViewController {
  
     
     let layout = UICollectionViewFlowLayout()
     var collectionView: UICollectionView!
-        
    
     
+    var currentCardDelegate: SelectedCardDelegate?
     
     var cards: [CardModel] =  []
     
@@ -41,12 +46,16 @@ class CardSelectionViewController: UIViewController {
         collectionView.dataSource = self
         view.addSubview(collectionView)
     }
+
+
+   
     
     
  
     deinit {
         print("cardsSelection delete")
     }
+    
 }
 
 
@@ -60,7 +69,10 @@ extension CardSelectionViewController: UICollectionViewDelegate, UICollectionVie
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CardCell
         let card = cards[indexPath.row]
         guard let image = UIImage(named: card.cardImage) else{ return UICollectionViewCell() }
-        cell.configureCell(image: image, text: "\(card.balance) $")
+        
+        cell.currentCard = card
+        cell.configureCell()
+       
         
         return cell
     }
@@ -70,12 +82,23 @@ extension CardSelectionViewController: UICollectionViewDelegate, UICollectionVie
         return CGSize(width: view.frame.width - 40, height: 80)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let card = cards[indexPath.row]
+        currentCardDelegate?.getCard(selectedCard: card)
+        dismiss(animated: true)
+       
+    }
     
     
 }
 
 
+
+
+    
    
+
+
     
     
 
@@ -84,4 +107,4 @@ extension CardSelectionViewController: UICollectionViewDelegate, UICollectionVie
 
 
 
- 
+
