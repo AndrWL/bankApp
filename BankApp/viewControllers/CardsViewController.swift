@@ -17,9 +17,11 @@ class CardsViewController: UIViewController {
     var tableView = UITableView()
     let flipCardImage = UIImageView()
     var conteinerView  = UIImageView()
+    let cardsAnimation = CardAnimation()
+    var animationCounterBalance = AnimateCounterBalance()
     private let flipButton = UIButton()
     private let addCardButtom = UIButton(backgroundColor: .darkGray, titleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), cornerRadius: 10)
-    var cards: [CardModel] = [CardModel(cardImage: "card_1", balance: 1000, transActionStory: [TransActionStory(sum: 30, comment: "eat"),     TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
+    var cards: [CardModel] = [CardModel(cardImage: "card_1", balance: 4560, transActionStory: [TransActionStory(sum: 30, comment: "eat"),     TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
         TransActionStory(sum: 10, comment: "healthy"),
         TransActionStory(sum: 110, comment: "study")]),
                               
@@ -39,7 +41,8 @@ class CardsViewController: UIViewController {
         view.backgroundColor = .darkGray
         
         currentCard = cards.first
-        balance.text = "\(currentCard.balance) $"
+       // balance.text = "\(currentCard.balance) $"
+        animationCounterBalance.endValue = currentCard.balance
         
         setupCardImageViews()
         setupButtons()
@@ -47,16 +50,25 @@ class CardsViewController: UIViewController {
         
         setupFlipButton()
         setConstraints()
+       
         
+       
         setupTableView()
          isHidden()
-        
+       
        
         
       
         
       
 }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        creatBalanceAnimation()
+    }
     
   
     
@@ -85,16 +97,8 @@ class CardsViewController: UIViewController {
         currentCardImage.clipsToBounds = true
         currentCardImage.layer.cornerRadius = 7
        
-        
-       
-       
-        conteinerView = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 300))
-       
         view.addSubview(currentCardImage)
         
-       
-        conteinerView.translatesAutoresizingMaskIntoConstraints = false
-        //conteinerView.addSubview(currentCardImage)
         
     }
     private func setupTableView() {
@@ -136,30 +140,9 @@ class CardsViewController: UIViewController {
     
     @objc private func tapToflip() {
         
-        guard let currentCardImage = currentCardImage else { return  }
-        
-        guard let BackImageimage = UIImage(named: "\(currentCard.cardImage)flip") else { return }
-        guard  let frontImage = UIImage(named: "\(currentCard.cardImage)") else {
-            return
-        }
+        cardsAnimation.creatAnimation(image: currentCardImage, model: currentCard)
 
-
-        if isFliped {
-            print("first")
-            UIView.transition(with: currentCardImage, duration: 0.8, options: .transitionFlipFromLeft) {
-                currentCardImage.image = BackImageimage
-                self.isFliped = false
-                
-            }
-    } else {
-        print("2nd")
-        UIView.transition(with: currentCardImage, duration: 0.8, options: .transitionFlipFromLeft) {
         
-       
-            currentCardImage.image = frontImage
-             self.isFliped.toggle()
-        }
-    }
 }
     
         
@@ -188,13 +171,21 @@ class CardsViewController: UIViewController {
                                      flipButton.centerXAnchor.constraint(equalTo: currentCardImage.centerXAnchor)])
         
         
-//        NSLayoutConstraint.activate([currentCardImage!.centerXAnchor.constraint(equalTo: conteinerView.centerXAnchor),
-//                                     currentCardImage!.centerYAnchor.constraint(equalTo: conteinerView.centerYAnchor),
-//                                     currentCardImage!.widthAnchor.constraint(equalTo: conteinerView.widthAnchor),
-//                                     currentCardImage!.heightAnchor.constraint(equalTo: conteinerView.heightAnchor)])
+        
         
     }
     
+     func creatBalanceAnimation() {
+        let displayLink = CADisplayLink(target: self, selector: #selector (handleUpdate))
+        displayLink.add(to: .main, forMode: .default)
+        
+    }
+    
+    @objc  func handleUpdate() {
+        
+        animationCounterBalance.animateLabel(to: balance, card: currentCard)
+
+    }
     deinit {
         print("collection delete")
     }

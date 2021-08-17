@@ -29,6 +29,8 @@
 		7FB69A9B26BC5ADF009E7384 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69A9A26BC5ADF009E7384 /* MainTabbarController.swift */; };
 		7FB69A9D26BC5B9E009E7384 /* AccountVieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69A9C26BC5B9E009E7384 /* AccountVieController.swift */; };
 		7FB69A9F26BC5C22009E7384 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69A9E26BC5C22009E7384 /* MoreViewController.swift */; };
+		7FF1148E26CBD4C5005D2680 /* AnimateCounterBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1148D26CBD4C5005D2680 /* AnimateCounterBalance.swift */; };
+		7FF1149126CBECFB005D2680 /* CardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1149026CBECFB005D2680 /* CardAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		7FB69A9A26BC5ADF009E7384 /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		7FB69A9C26BC5B9E009E7384 /* AccountVieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVieController.swift; sourceTree = "<group>"; };
 		7FB69A9E26BC5C22009E7384 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		7FF1148D26CBD4C5005D2680 /* AnimateCounterBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateCounterBalance.swift; sourceTree = "<group>"; };
+		7FF1149026CBECFB005D2680 /* CardAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,7 @@
 		7F5EA47826BA84C800B2C84B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7FF1148F26CBECB1005D2680 /* Animations */,
 				7F019A9226B593E7002B6E69 /* Main.storyboard */,
 			);
 			path = Views;
@@ -145,6 +150,15 @@
 				7FB69A9826BC3A9C009E7384 /* StackView + Extension .swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		7FF1148F26CBECB1005D2680 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				7FF1148D26CBD4C5005D2680 /* AnimateCounterBalance.swift */,
+				7FF1149026CBECFB005D2680 /* CardAnimation.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,7 +241,9 @@
 				7FB69A9526BBF3BB009E7384 /* UIlabel + Extension.swift in Sources */,
 				7F019A8D26B593E7002B6E69 /* AppDelegate.swift in Sources */,
 				7F321D3D26BD31E500BF0DAA /* IsHidden NavigationControllerBar .swift in Sources */,
+				7FF1149126CBECFB005D2680 /* CardAnimation.swift in Sources */,
 				7FB69A9926BC3A9C009E7384 /* StackView + Extension .swift in Sources */,
+				7FF1148E26CBD4C5005D2680 /* AnimateCounterBalance.swift in Sources */,
 				7F37F25026B6884E00E00522 /* LoginViewController.swift in Sources */,
 				7FB69A9B26BC5ADF009E7384 /* MainTabbarController.swift in Sources */,
 				7F11879826C27D5500C79420 /* LaunchViewController.swift in Sources */,

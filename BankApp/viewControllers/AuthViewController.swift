@@ -93,6 +93,7 @@ class AuthViewController: UIViewController {
 import SwiftUI
 
 struct AuthView : PreviewProvider {
+    
     static var previews: some View {
         ContainerView().edgesIgnoringSafeArea(.all)
         

@@ -11,7 +11,7 @@ struct CardModel {
 
     let id = UUID()
     let cardImage: String
-    let balance: Int
+    var balance: Double
     let transActionStory: [TransActionStory]
     
 }
