@@ -142,8 +142,8 @@ class CardsViewController: UIViewController {
         guard  let frontImage = UIImage(named: "\(currentCard.cardImage)") else {
             return
         }
-        
-        
+
+
         if isFliped {
             print("first")
             UIView.transition(with: currentCardImage, duration: 0.8, options: .transitionFlipFromLeft) {

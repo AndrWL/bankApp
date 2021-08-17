@@ -84,23 +84,4 @@ extension CardSelectionViewController: UICollectionViewDelegate, UICollectionVie
 
 
 
-import SwiftUI
 
-struct CardsSelectionViewController: PreviewProvider {
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-        
-    }
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let cardselection = CardSelectionViewController()
-        
-        func makeUIViewController(context: Context) -> some CardSelectionViewController {
-            return cardselection
-        }
-        func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-            
-        }
-        
-    }
-}
