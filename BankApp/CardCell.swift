@@ -10,11 +10,12 @@ import UIKit
 
 class CardCell: UICollectionViewCell {
     
-    var currentCard: CardModel!
+    var currentCard: CardModel?
     let startValue: Double = 0
     let animationDuration: Double = 0.5
      let animationStartDate = Date()
     var displayLink: CADisplayLink?
+    var endValue: Double = 0
     override init(frame: CGRect) {
         super.init(frame: frame)
        
@@ -22,9 +23,9 @@ class CardCell: UICollectionViewCell {
         contentView.addSubview(cardsImage)
         contentView.addSubview(balanceLabel)
         contentView.backgroundColor = .darkGray
-      
-           displayLink = CADisplayLink(target: self, selector: #selector (updatelabels))
+        displayLink = CADisplayLink(target: self, selector: #selector(updatelabels))
         displayLink?.add(to: .main, forMode: .default)
+     
         
     }
     var cardsImage = UIImageView()
@@ -53,33 +54,20 @@ class CardCell: UICollectionViewCell {
         
 
     public func configureCell() {
-       
-        balanceLabel.text = "\(currentCard.balance)"
-       cardsImage.image = UIImage(named: currentCard.cardImage)
-   
-        //print("\(currentCard.balance)")
-        
-//        cardsImage.contentMode = .scaleAspectFit
-        
-       // balanceLabel.text = "\(currentCard.balance)"
-        
-//       
-//        print(currentCard.balance)
+     
+        balanceLabel.text = "\(currentCard!.balance)"
+        cardsImage.image = UIImage(named: currentCard!.cardImage)
+        endValue = currentCard?.balance ??  0
+     
       
     }
     
    
     @objc  func updatelabels() {
-        
-       
-        let endValue: Double  = currentCard.balance
-      
-       
-       
-            
+
             let now = Date()
              let elapsedTime = now.timeIntervalSince(animationStartDate)
-        
+
              if elapsedTime > animationDuration {
                 displayLink?.invalidate()
                 displayLink = nil
@@ -89,16 +77,14 @@ class CardCell: UICollectionViewCell {
              let percentage = elapsedTime / animationDuration
                 let value = startValue + percentage * (endValue - startValue)
                  balanceLabel.text = "\(value.rounded()) $"
-          
-          
+
+
         }
       
 
    }
        
-        
-        
+
     
-    
-    
+
 }

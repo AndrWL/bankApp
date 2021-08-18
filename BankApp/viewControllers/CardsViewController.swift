@@ -21,7 +21,7 @@ class CardsViewController: UIViewController {
     var conteinerView  = UIImageView()
     let cardsAnimation = CardAnimation()
     
-    //var animationCounterBalance = AnimateCounterBalance()
+    
     private let flipButton = UIButton()
     private let addCardButtom = UIButton(backgroundColor: .darkGray, titleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), cornerRadius: 10)
     var cards: [CardModel] = [CardModel(cardImage: "card_1", balance: 4560, transActionStory: [TransActionStory(sum: 30, comment: "eat"),     TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 720, comment: "work"),
@@ -30,11 +30,14 @@ class CardsViewController: UIViewController {
                               
         CardModel(cardImage: "card_2", balance: 2000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
         TransActionStory(sum: 10, comment: "healthy"),
-        TransActionStory(sum: 110, comment: "study")]),
-        CardModel( cardImage: "card_3", balance: 50000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 5000, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
-            TransActionStory(sum: 1000, comment: "healthy"),
-            TransActionStory(sum: 1100, comment: "study")]),
-       
+        TransActionStory(sum: 110, comment: "study")]), CardModel(cardImage: "card_2", balance: 2000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
+                                                                                                                         TransActionStory(sum: 10, comment: "healthy"),
+                                                                                                                         TransActionStory(sum: 110, comment: "study")]), CardModel(cardImage: "card_2", balance: 2000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
+                                                                                                                                                                                                                                          TransActionStory(sum: 10, comment: "healthy"),
+                                                                                                                                                                                                                                          TransActionStory(sum: 110, comment: "study")]), CardModel(cardImage: "card_1", balance: 4560, transActionStory: [TransActionStory(sum: 30, comment: "eat"),     TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 720, comment: "work"),
+                                                                                                                                                                                                                                                                                                                                                           TransActionStory(sum: 330, comment: "healthy"),
+                                                                                                                                                                                                                                                                                                                                                           TransActionStory(sum: 120, comment: "study")])
+     
     ]
     var currentCardImage: UIImageView!
     
@@ -59,7 +62,7 @@ class CardsViewController: UIViewController {
         setupTableView()
          isHidden()
        
-        //creatBalanceAnimation()
+     
         
       
         
@@ -136,6 +139,7 @@ class CardsViewController: UIViewController {
     @objc private func addCard() {
         
         let cardSelectionViewController = CardSelectionViewController()
+        cardSelectionViewController.modalPresentationStyle = .fullScreen
         cardSelectionViewController.cards = cards
         
         cardSelectionViewController.currentCardDelegate = self
@@ -186,17 +190,7 @@ class CardsViewController: UIViewController {
         
     }
     
-     func creatBalanceAnimation() {
-        let displayLink = CADisplayLink(target: self, selector: #selector (handleUpdate))
-        displayLink.add(to: .main, forMode: .default)
-        
-    }
-    
-    @objc  func handleUpdate() {
-        
-       // animationCounterBalance.animateLabel(to: balance, card: currentCard)
-
-    }
+   
     deinit {
         print("collection delete")
     }
@@ -235,7 +229,7 @@ extension CardsViewController: SelectedCardDelegate {
         DispatchQueue.main.async {
             self.currentCard = selectedCard
             self.balance.text = "\(self.currentCard.balance)"
-        //    self.animationCounterBalance.endValue = self.currentCard.balance
+    
             self.currentCardImage.image = UIImage(named: self.currentCard.cardImage)
             self.tableView.reloadData()
             
@@ -244,7 +238,7 @@ extension CardsViewController: SelectedCardDelegate {
       
          
         }
-        self.creatBalanceAnimation()
+
         
     }
     
