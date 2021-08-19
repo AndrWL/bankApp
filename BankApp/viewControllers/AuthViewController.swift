@@ -59,8 +59,8 @@ class AuthViewController: UIViewController {
         
         singUpButton.setTitle("Sing Up", for: .normal)
         loginButton.setTitle("Login", for: .normal)
-        loginButton.addTarget(self, action: #selector(buttomTapped), for: .touchUpInside)
-   
+        loginButton.addTarget(self, action: #selector(loginbuttomTapped), for: .touchUpInside)
+        singUpButton.addTarget(self, action: #selector(registerTapped), for: .touchUpInside)
         
         
         NSLayoutConstraint.activate([
@@ -73,9 +73,8 @@ class AuthViewController: UIViewController {
       
     }
     
-    @objc private func buttomTapped() {
+    @objc private func loginbuttomTapped() {
         
-        self.dismiss(animated: true)
         let loginViewController = LoginViewController()
         
         self.navigationController?.pushViewController(loginViewController, animated: true)
@@ -83,6 +82,12 @@ class AuthViewController: UIViewController {
         
        
     }
+    @objc func registerTapped() {
+        let registrationViewController = RegistrationViewController()
+        self.navigationController?.pushViewController(registrationViewController, animated: true)
+        
+    }
+    
     deinit {
         print("1st Delete")
     }

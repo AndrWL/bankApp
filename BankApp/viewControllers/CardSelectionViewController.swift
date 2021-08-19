@@ -23,7 +23,7 @@ class CardSelectionViewController: UIViewController {
     var currentCardDelegate: SelectedCardDelegate?
     
     var cards: [CardModel] =  []
-    var addCardButton = UIButton(backgroundColor: #colorLiteral(red: 0.6044693589, green: 0.8744841814, blue: 0.6529840231, alpha: 1), titleColor: .black, cornerRadius: 7)
+    var addCardButton = UIButton(backgroundColor: #colorLiteral(red: 0.6044693589, green: 0.8744841814, blue: 0.6529840231, alpha: 1), titleColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), cornerRadius: 7)
     
     
     override func viewDidLoad() {
@@ -35,15 +35,17 @@ class CardSelectionViewController: UIViewController {
         collectionView.backgroundColor = .black
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 200)
-        view.backgroundColor = .black
        
+        view.backgroundColor = .black
+        
         view.addSubview(collectionView)
         
         
         
-        addCardButton.frame = CGRect(x: 0, y: 100, width: 200, height: 200)
+     
         addCardButton.setTitle("add card", for: .normal)
+      //  addCardButton.titleLabel?.font = addCardButton.titleLabel?.font.withSize(100)
+        
         view.addSubview(addCardButton)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         addCardButton.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +56,10 @@ class CardSelectionViewController: UIViewController {
 
    
     
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print(collectionView.frame.size.height)
+    }
  
     deinit {
         print("cardsSelection delete")
@@ -63,10 +68,11 @@ class CardSelectionViewController: UIViewController {
     private func creatConstreints() {
       
         NSLayoutConstraint.activate([collectionView.widthAnchor.constraint(equalToConstant: view.frame.width),
-                                     collectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor) , collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: +80),collectionView.heightAnchor.constraint(equalToConstant: view.frame.height/2)
+                                     collectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor) , collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: +40),collectionView.heightAnchor.constraint(equalToConstant: view.frame.size.height - 200)
                                    ])
         NSLayoutConstraint.activate([addCardButton.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
-                                     addCardButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),addCardButton.widthAnchor.constraint(equalToConstant: collectionView.frame.width/2)])
+                                     addCardButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),addCardButton.widthAnchor.constraint(equalToConstant: collectionView.frame.width/2),addCardButton.heightAnchor.constraint(equalToConstant: 40)
+                                  ])
     }
     
     
