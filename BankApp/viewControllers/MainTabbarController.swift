@@ -12,7 +12,7 @@ class MainTabBarController: UITabBarController {
     private let logOutButton = UIButton(backgroundColor: .darkGray, titleColor: .white, cornerRadius: 10)
     
     let cardsViewController = CardsViewController()
-    let accountViewController = AccountVieController()
+    let accountViewController = ExchangeViewController()
     let moreViewController = MoreViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,7 @@ class MainTabBarController: UITabBarController {
         logOutButton.tintColor = .lightGray
         logOutButton.addTarget(self, action: #selector(logOut), for: .touchUpInside)
         
-        NSLayoutConstraint.activate([logOutButton.heightAnchor.constraint(equalToConstant: 30), logOutButton.widthAnchor.constraint(equalToConstant: 30), logOutButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20), logOutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: +38   )])
+        NSLayoutConstraint.activate([logOutButton.heightAnchor.constraint(equalToConstant: 30), logOutButton.widthAnchor.constraint(equalToConstant: 30), logOutButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20), logOutButton.topAnchor.constraint(equalTo: view.topAnchor, constant: +38)])
     }
     
     private func generateNavigationViewcontroller(rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {

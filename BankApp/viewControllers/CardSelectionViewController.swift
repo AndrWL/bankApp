@@ -44,8 +44,7 @@ class CardSelectionViewController: UIViewController {
         
      
         addCardButton.setTitle("add card", for: .normal)
-      //  addCardButton.titleLabel?.font = addCardButton.titleLabel?.font.withSize(100)
-        
+      
         view.addSubview(addCardButton)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         addCardButton.translatesAutoresizingMaskIntoConstraints = false

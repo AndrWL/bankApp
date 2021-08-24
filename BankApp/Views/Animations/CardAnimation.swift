@@ -23,20 +23,23 @@ class CardAnimation {
 
     if isFliped {
         print("first")
-        UIView.transition(with: currentCardImage, duration: 0.8, options: .transitionFlipFromLeft)  {
+        UIView.transition(with: currentCardImage, duration: 0.8, options: .transitionFlipFromLeft)  { [weak self] in
             currentCardImage.image = BackImageimage
-            self.isFliped = false
+            self?.isFliped = false
             
         }
 } else {
     print("2nd")
-    UIView.transition(with: currentCardImage, duration: 0.8, options: .transitionFlipFromLeft) {
+    UIView.transition(with: currentCardImage, duration: 0.8, options: .transitionFlipFromLeft) { [weak self] in
     
    
         currentCardImage.image = frontImage
-        self.isFliped = true
+        self?.isFliped = true
     }
 }
-    
+       
+    }
+    deinit {
+        print("Animation delete")
     }
 }

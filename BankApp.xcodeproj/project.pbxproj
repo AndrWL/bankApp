@@ -21,15 +21,18 @@
 		7F37F25026B6884E00E00522 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37F24F26B6884E00E00522 /* LoginViewController.swift */; };
 		7F3F3E1326C1475F00C5383D /* CardSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F3E1226C1475F00C5383D /* CardSelectionViewController.swift */; };
 		7F3F3E1926C1912B00C5383D /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3F3E1826C1912B00C5383D /* AuthViewController.swift */; };
+		7F3FE5E326CFA4E5004BE5C4 /* FireBaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3FE5E226CFA4E5004BE5C4 /* FireBaseAuth.swift */; };
+		7F3FE5E626CFEEE3004BE5C4 /* CardStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3FE5E526CFEEE3004BE5C4 /* CardStyleViewController.swift */; };
+		7F76084E26D4EC49002A1EF9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76084D26D4EC49002A1EF9 /* NetworkService.swift */; };
+		7F76085126D4FB5C002A1EF9 /* CurrencyExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76085026D4FB5C002A1EF9 /* CurrencyExchangeModel.swift */; };
 		7F843F1D26B94EBD005A41AE /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F843F1C26B94EBD005A41AE /* CardCell.swift */; };
 		7FB69A9126BBE61C009E7384 /* UIButton  + Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69A9026BBE61C009E7384 /* UIButton  + Extension .swift */; };
 		7FB69A9526BBF3BB009E7384 /* UIlabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69A9426BBF3BB009E7384 /* UIlabel + Extension.swift */; };
 		7FB69A9726BC1112009E7384 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69A9626BC1112009E7384 /* TextFieldView.swift */; };
 		7FB69A9926BC3A9C009E7384 /* StackView + Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69A9826BC3A9C009E7384 /* StackView + Extension .swift */; };
 		7FB69A9B26BC5ADF009E7384 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69A9A26BC5ADF009E7384 /* MainTabbarController.swift */; };
-		7FB69A9D26BC5B9E009E7384 /* AccountVieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69A9C26BC5B9E009E7384 /* AccountVieController.swift */; };
+		7FB69A9D26BC5B9E009E7384 /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69A9C26BC5B9E009E7384 /* ExchangeViewController.swift */; };
 		7FB69A9F26BC5C22009E7384 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69A9E26BC5C22009E7384 /* MoreViewController.swift */; };
-		7FCBABBB26CE9D3800339DA3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCBABBA26CE9D3800339DA3 /* AuthService.swift */; };
 		7FF0BFEE26CE54920060DADF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FF0BFED26CE54920060DADF /* GoogleService-Info.plist */; };
 		7FF1148E26CBD4C5005D2680 /* AnimateCounterBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1148D26CBD4C5005D2680 /* AnimateCounterBalance.swift */; };
 		7FF1149126CBECFB005D2680 /* CardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1149026CBECFB005D2680 /* CardAnimation.swift */; };
@@ -52,15 +55,18 @@
 		7F37F24F26B6884E00E00522 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7F3F3E1226C1475F00C5383D /* CardSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSelectionViewController.swift; sourceTree = "<group>"; };
 		7F3F3E1826C1912B00C5383D /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		7F3FE5E226CFA4E5004BE5C4 /* FireBaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseAuth.swift; sourceTree = "<group>"; };
+		7F3FE5E526CFEEE3004BE5C4 /* CardStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyleViewController.swift; sourceTree = "<group>"; };
+		7F76084D26D4EC49002A1EF9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		7F76085026D4FB5C002A1EF9 /* CurrencyExchangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeModel.swift; sourceTree = "<group>"; };
 		7F843F1C26B94EBD005A41AE /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		7FB69A9026BBE61C009E7384 /* UIButton  + Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton  + Extension .swift"; sourceTree = "<group>"; };
 		7FB69A9426BBF3BB009E7384 /* UIlabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIlabel + Extension.swift"; sourceTree = "<group>"; };
 		7FB69A9626BC1112009E7384 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		7FB69A9826BC3A9C009E7384 /* StackView + Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension .swift"; sourceTree = "<group>"; };
 		7FB69A9A26BC5ADF009E7384 /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
-		7FB69A9C26BC5B9E009E7384 /* AccountVieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVieController.swift; sourceTree = "<group>"; };
+		7FB69A9C26BC5B9E009E7384 /* ExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		7FB69A9E26BC5C22009E7384 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
-		7FCBABBA26CE9D3800339DA3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		7FF0BFED26CE54920060DADF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7FF1148D26CBD4C5005D2680 /* AnimateCounterBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateCounterBalance.swift; sourceTree = "<group>"; };
 		7FF1149026CBECFB005D2680 /* CardAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAnimation.swift; sourceTree = "<group>"; };
@@ -111,11 +117,12 @@
 			children = (
 				7F019A8C26B593E7002B6E69 /* AppDelegate.swift */,
 				7F019A8E26B593E7002B6E69 /* SceneDelegate.swift */,
+				7F3FE5E126CFA0F9004BE5C4 /* SingIn&Auth */,
 				7F6BC25C26BAF61700578399 /* viewControllers */,
+				7F3FE5E426CFA4EC004BE5C4 /* Services */,
 				7F5EA47826BA84C800B2C84B /* Views */,
-				7F29AD4E26B99BF7009EEAD3 /* CardModel.swift */,
+				7F76084F26D4FB24002A1EF9 /* Model */,
 				7F843F1C26B94EBD005A41AE /* CardCell.swift */,
-				7FCBABBA26CE9D3800339DA3 /* AuthService.swift */,
 				7FB69A9226BBF390009E7384 /* UIkit */,
 				7F019A9526B593E8002B6E69 /* Assets.xcassets */,
 				7F019A9726B593E8002B6E69 /* LaunchScreen.storyboard */,
@@ -123,6 +130,25 @@
 				7F019A9A26B593E8002B6E69 /* Info.plist */,
 			);
 			path = BankApp;
+			sourceTree = "<group>";
+		};
+		7F3FE5E126CFA0F9004BE5C4 /* SingIn&Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7F3F3E1826C1912B00C5383D /* AuthViewController.swift */,
+				7F11879726C27D5500C79420 /* RegistrationViewController.swift */,
+				7F37F24F26B6884E00E00522 /* LoginViewController.swift */,
+			);
+			path = "SingIn&Auth";
+			sourceTree = "<group>";
+		};
+		7F3FE5E426CFA4EC004BE5C4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7F3FE5E226CFA4E5004BE5C4 /* FireBaseAuth.swift */,
+				7F76084D26D4EC49002A1EF9 /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		7F5EA47826BA84C800B2C84B /* Views */ = {
@@ -138,16 +164,23 @@
 			isa = PBXGroup;
 			children = (
 				7F11879526C27C3700C79420 /* RootViewController.swift */,
-				7F3F3E1826C1912B00C5383D /* AuthViewController.swift */,
-				7F37F24F26B6884E00E00522 /* LoginViewController.swift */,
-				7F11879726C27D5500C79420 /* RegistrationViewController.swift */,
 				7F019A9026B593E7002B6E69 /* CardsViewController.swift */,
 				7FB69A9A26BC5ADF009E7384 /* MainTabbarController.swift */,
 				7F3F3E1226C1475F00C5383D /* CardSelectionViewController.swift */,
-				7FB69A9C26BC5B9E009E7384 /* AccountVieController.swift */,
+				7FB69A9C26BC5B9E009E7384 /* ExchangeViewController.swift */,
 				7FB69A9E26BC5C22009E7384 /* MoreViewController.swift */,
+				7F3FE5E526CFEEE3004BE5C4 /* CardStyleViewController.swift */,
 			);
 			path = viewControllers;
+			sourceTree = "<group>";
+		};
+		7F76084F26D4FB24002A1EF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F29AD4E26B99BF7009EEAD3 /* CardModel.swift */,
+				7F76085026D4FB5C002A1EF9 /* CurrencyExchangeModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7FB69A9226BBF390009E7384 /* UIkit */ = {
@@ -305,14 +338,16 @@
 			files = (
 				7F843F1D26B94EBD005A41AE /* CardCell.swift in Sources */,
 				7F3F3E1326C1475F00C5383D /* CardSelectionViewController.swift in Sources */,
+				7F76084E26D4EC49002A1EF9 /* NetworkService.swift in Sources */,
 				7F11879626C27C3700C79420 /* RootViewController.swift in Sources */,
 				7FB69A9F26BC5C22009E7384 /* MoreViewController.swift in Sources */,
 				7F019A9126B593E7002B6E69 /* CardsViewController.swift in Sources */,
 				7F3F3E1926C1912B00C5383D /* AuthViewController.swift in Sources */,
-				7FCBABBB26CE9D3800339DA3 /* AuthService.swift in Sources */,
+				7F3FE5E326CFA4E5004BE5C4 /* FireBaseAuth.swift in Sources */,
 				7FB69A9526BBF3BB009E7384 /* UIlabel + Extension.swift in Sources */,
 				7F019A8D26B593E7002B6E69 /* AppDelegate.swift in Sources */,
 				7F321D3D26BD31E500BF0DAA /* IsHidden NavigationControllerBar .swift in Sources */,
+				7F3FE5E626CFEEE3004BE5C4 /* CardStyleViewController.swift in Sources */,
 				7FF1149126CBECFB005D2680 /* CardAnimation.swift in Sources */,
 				7FB69A9926BC3A9C009E7384 /* StackView + Extension .swift in Sources */,
 				7FF1148E26CBD4C5005D2680 /* AnimateCounterBalance.swift in Sources */,
@@ -322,7 +357,8 @@
 				7F019A8F26B593E7002B6E69 /* SceneDelegate.swift in Sources */,
 				7F29AD4F26B99BF7009EEAD3 /* CardModel.swift in Sources */,
 				7FB69A9126BBE61C009E7384 /* UIButton  + Extension .swift in Sources */,
-				7FB69A9D26BC5B9E009E7384 /* AccountVieController.swift in Sources */,
+				7F76085126D4FB5C002A1EF9 /* CurrencyExchangeModel.swift in Sources */,
+				7FB69A9D26BC5B9E009E7384 /* ExchangeViewController.swift in Sources */,
 				7FB69A9726BC1112009E7384 /* TextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

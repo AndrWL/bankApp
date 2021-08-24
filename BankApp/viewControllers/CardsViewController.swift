@@ -13,7 +13,7 @@ class CardsViewController: UIViewController {
 
     
 
-    var isFliped = true
+    var isFlipped = true
     var currentCard: CardModel!
     var balance = UILabel(text: "Balance")
     var tableView = UITableView()
@@ -24,13 +24,13 @@ class CardsViewController: UIViewController {
     
     private let flipButton = UIButton()
     private let addCardButtom = UIButton(backgroundColor: .darkGray, titleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), cornerRadius: 10)
-    var cards: [CardModel] = [CardModel(cardImage: "card_1", balance: 4560, transActionStory: [TransActionStory(sum: 30, comment: "eat"),     TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 720, comment: "work"),
+    var cards: [CardModel] = [CardModel(cardImage: "black", balance: 4560, transActionStory: [TransActionStory(sum: 30, comment: "eat"),     TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 720, comment: "work"),
         TransActionStory(sum: 330, comment: "healthy"),
         TransActionStory(sum: 120, comment: "study")]),
                               
-        CardModel(cardImage: "card_2", balance: 200, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
+        CardModel(cardImage: "white", balance: 200, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
         TransActionStory(sum: 10, comment: "healthy"),
-        TransActionStory(sum: 110, comment: "study")]), CardModel(cardImage: "card_3", balance: 20000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work")])
+        TransActionStory(sum: 110, comment: "study")]), CardModel(cardImage: "grey", balance: 20000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work")])
      
     ]
     
