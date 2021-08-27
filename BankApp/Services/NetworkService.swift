@@ -23,7 +23,7 @@ class NetworkService {
                 let model = self.fetchData(data: data)
                 complition(model)
                } else {
-                   print(error?.localizedDescription)
+                   print(error!.localizedDescription)
                }
                
                

@@ -13,6 +13,7 @@ struct CardModel {
     let cardImage: String
     var balance: Double
     let transActionStory: [TransActionStory]
+    let cardDescription: String?
     
 }
 

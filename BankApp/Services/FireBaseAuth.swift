@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseFirestore
 
 
 class AuthService {
@@ -17,7 +18,7 @@ class AuthService {
     
     func register(email: String?, password: String?, complition: @escaping(Result<User, Error>) -> Void) {
         
-        auth.createUser(withEmail: email!, password: password!) { [weak self] result, error in
+        auth.createUser(withEmail: email!, password: password!) { result, error in
             guard let result = result else { complition(.failure(error!))
                 return }
             

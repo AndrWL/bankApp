@@ -26,11 +26,11 @@ class CardsViewController: UIViewController {
     private let addCardButtom = UIButton(backgroundColor: .darkGray, titleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), cornerRadius: 10)
     var cards: [CardModel] = [CardModel(cardImage: "black", balance: 4560, transActionStory: [TransActionStory(sum: 30, comment: "eat"),     TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 720, comment: "work"),
         TransActionStory(sum: 330, comment: "healthy"),
-        TransActionStory(sum: 120, comment: "study")]),
+        TransActionStory(sum: 120, comment: "study")], cardDescription: nil),
                               
         CardModel(cardImage: "white", balance: 200, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work"),
         TransActionStory(sum: 10, comment: "healthy"),
-        TransActionStory(sum: 110, comment: "study")]), CardModel(cardImage: "grey", balance: 20000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work")])
+        TransActionStory(sum: 110, comment: "study")], cardDescription: nil), CardModel(cardImage: "grey", balance: 20000, transActionStory: [TransActionStory(sum: 30, comment: "eat"), TransActionStory(sum: 50, comment: "sport"), TransActionStory(sum: 70, comment: "work")], cardDescription: nil)
      
     ]
     
@@ -50,11 +50,12 @@ class CardsViewController: UIViewController {
         setupLabel()
         
         setupFlipButton()
+        setupTableView()
         setConstraints()
        
         
        
-        setupTableView()
+        
          isHidden()
        
      
@@ -104,13 +105,14 @@ class CardsViewController: UIViewController {
     }
     private func setupTableView() {
         
-        tableView = UITableView(frame: CGRect(x: 0, y: 350, width: view.frame.width, height: view.frame.height/2))
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellTransAcrion")
         view.addSubview(tableView)
-        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
+        
     }
     
     private func setupLabel() {
@@ -180,8 +182,8 @@ class CardsViewController: UIViewController {
                                      flipButton.heightAnchor.constraint(equalToConstant: currentCardImage.frame.height-50), flipButton.centerYAnchor.constraint(equalTo: currentCardImage.centerYAnchor),
                                      flipButton.centerXAnchor.constraint(equalTo: currentCardImage.centerXAnchor)])
         
-        
-        
+      
+        NSLayoutConstraint.activate([tableView.widthAnchor.constraint(equalTo: view.widthAnchor), tableView.topAnchor.constraint(equalTo: currentCardImage.bottomAnchor, constant: 50), tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor), tableView.heightAnchor.constraint(equalToConstant: ((view.frame.height/2))-50)])
         
     }
     

@@ -49,16 +49,18 @@ class CardSelectionViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         addCardButton.translatesAutoresizingMaskIntoConstraints = false
         creatConstreints()
-        print(collectionView.frame.height)
+        addCardButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
 
 
-   
+     @objc private func buttonTapped() {
+       
+        let cardStyleViewController = CardStyleViewController()
+        
+        present(cardStyleViewController, animated: true)
+    }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        print(collectionView.frame.size.height)
-    }
+    
  
     deinit {
         print("cardsSelection delete")
@@ -97,7 +99,7 @@ extension CardSelectionViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
+        print(#function)
         return CGSize(width: view.frame.width - 40, height: 80)
     }
     

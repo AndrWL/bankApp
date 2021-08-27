@@ -30,7 +30,7 @@ class MainTabBarController: UITabBarController {
         let accountImage = UIImage(systemName: "person.crop.circle", withConfiguration: boldConfig)!
         let moreImage = UIImage(systemName: "ellipsis.circle", withConfiguration: boldConfig)!
         
-        viewControllers = [ generateNavigationViewcontroller(rootViewController: cardsViewController, title: "Cards", image: cardImage), generateNavigationViewcontroller(rootViewController: accountViewController, title: "account", image: accountImage), generateNavigationViewcontroller(rootViewController: moreViewController, title: "more", image: moreImage)
+        viewControllers = [ generateNavigationViewcontroller(rootViewController: cardsViewController, title: "Cards", image: cardImage), generateNavigationViewcontroller(rootViewController: accountViewController, title: "currencies", image: accountImage), generateNavigationViewcontroller(rootViewController: moreViewController, title: "more", image: moreImage)
             
         ]
         setupLogOutButton()

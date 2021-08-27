@@ -14,7 +14,6 @@
 		7F019A9426B593E7002B6E69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F019A9226B593E7002B6E69 /* Main.storyboard */; };
 		7F019A9626B593E8002B6E69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F019A9526B593E8002B6E69 /* Assets.xcassets */; };
 		7F019A9926B593E8002B6E69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F019A9726B593E8002B6E69 /* LaunchScreen.storyboard */; };
-		7F11879626C27C3700C79420 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F11879526C27C3700C79420 /* RootViewController.swift */; };
 		7F11879826C27D5500C79420 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F11879726C27D5500C79420 /* RegistrationViewController.swift */; };
 		7F29AD4F26B99BF7009EEAD3 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F29AD4E26B99BF7009EEAD3 /* CardModel.swift */; };
 		7F321D3D26BD31E500BF0DAA /* IsHidden NavigationControllerBar .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F321D3C26BD31E500BF0DAA /* IsHidden NavigationControllerBar .swift */; };
@@ -25,6 +24,7 @@
 		7F3FE5E626CFEEE3004BE5C4 /* CardStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3FE5E526CFEEE3004BE5C4 /* CardStyleViewController.swift */; };
 		7F76084E26D4EC49002A1EF9 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76084D26D4EC49002A1EF9 /* NetworkService.swift */; };
 		7F76085126D4FB5C002A1EF9 /* CurrencyExchangeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76085026D4FB5C002A1EF9 /* CurrencyExchangeModel.swift */; };
+		7F76085326D52FC8002A1EF9 /* CardStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F76085226D52FC8002A1EF9 /* CardStyleCell.swift */; };
 		7F843F1D26B94EBD005A41AE /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F843F1C26B94EBD005A41AE /* CardCell.swift */; };
 		7FB69A9126BBE61C009E7384 /* UIButton  + Extension .swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69A9026BBE61C009E7384 /* UIButton  + Extension .swift */; };
 		7FB69A9526BBF3BB009E7384 /* UIlabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB69A9426BBF3BB009E7384 /* UIlabel + Extension.swift */; };
@@ -36,6 +36,8 @@
 		7FF0BFEE26CE54920060DADF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FF0BFED26CE54920060DADF /* GoogleService-Info.plist */; };
 		7FF1148E26CBD4C5005D2680 /* AnimateCounterBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1148D26CBD4C5005D2680 /* AnimateCounterBalance.swift */; };
 		7FF1149126CBECFB005D2680 /* CardAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1149026CBECFB005D2680 /* CardAnimation.swift */; };
+		7FF9DAA926D9027600AC74F6 /* FireStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF9DAA826D9027600AC74F6 /* FireStoreService.swift */; };
+		7FF9DAAB26D91A7400AC74F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF9DAAA26D91A7400AC74F6 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +50,6 @@
 		7F019A9526B593E8002B6E69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F019A9826B593E8002B6E69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F019A9A26B593E8002B6E69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F11879526C27C3700C79420 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		7F11879726C27D5500C79420 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		7F29AD4E26B99BF7009EEAD3 /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
 		7F321D3C26BD31E500BF0DAA /* IsHidden NavigationControllerBar .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IsHidden NavigationControllerBar .swift"; sourceTree = "<group>"; };
@@ -59,6 +60,7 @@
 		7F3FE5E526CFEEE3004BE5C4 /* CardStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyleViewController.swift; sourceTree = "<group>"; };
 		7F76084D26D4EC49002A1EF9 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		7F76085026D4FB5C002A1EF9 /* CurrencyExchangeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangeModel.swift; sourceTree = "<group>"; };
+		7F76085226D52FC8002A1EF9 /* CardStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStyleCell.swift; sourceTree = "<group>"; };
 		7F843F1C26B94EBD005A41AE /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		7FB69A9026BBE61C009E7384 /* UIButton  + Extension .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton  + Extension .swift"; sourceTree = "<group>"; };
 		7FB69A9426BBF3BB009E7384 /* UIlabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIlabel + Extension.swift"; sourceTree = "<group>"; };
@@ -70,6 +72,8 @@
 		7FF0BFED26CE54920060DADF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7FF1148D26CBD4C5005D2680 /* AnimateCounterBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateCounterBalance.swift; sourceTree = "<group>"; };
 		7FF1149026CBECFB005D2680 /* CardAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAnimation.swift; sourceTree = "<group>"; };
+		7FF9DAA826D9027600AC74F6 /* FireStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireStoreService.swift; sourceTree = "<group>"; };
+		7FF9DAAA26D91A7400AC74F6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AC9D9F35A10283D088AA26C8 /* Pods_BankApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BankApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA34E4781D9C4332F9145183 /* Pods-BankApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BankApp.release.xcconfig"; path = "Target Support Files/Pods-BankApp/Pods-BankApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,7 +126,6 @@
 				7F3FE5E426CFA4EC004BE5C4 /* Services */,
 				7F5EA47826BA84C800B2C84B /* Views */,
 				7F76084F26D4FB24002A1EF9 /* Model */,
-				7F843F1C26B94EBD005A41AE /* CardCell.swift */,
 				7FB69A9226BBF390009E7384 /* UIkit */,
 				7F019A9526B593E8002B6E69 /* Assets.xcassets */,
 				7F019A9726B593E8002B6E69 /* LaunchScreen.storyboard */,
@@ -147,6 +150,7 @@
 			children = (
 				7F3FE5E226CFA4E5004BE5C4 /* FireBaseAuth.swift */,
 				7F76084D26D4EC49002A1EF9 /* NetworkService.swift */,
+				7FF9DAA826D9027600AC74F6 /* FireStoreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -154,6 +158,7 @@
 		7F5EA47826BA84C800B2C84B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7F76085426D56514002A1EF9 /* Cell */,
 				7FF1148F26CBECB1005D2680 /* Animations */,
 				7F019A9226B593E7002B6E69 /* Main.storyboard */,
 			);
@@ -163,13 +168,12 @@
 		7F6BC25C26BAF61700578399 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7F11879526C27C3700C79420 /* RootViewController.swift */,
 				7F019A9026B593E7002B6E69 /* CardsViewController.swift */,
 				7FB69A9A26BC5ADF009E7384 /* MainTabbarController.swift */,
 				7F3F3E1226C1475F00C5383D /* CardSelectionViewController.swift */,
+				7F3FE5E526CFEEE3004BE5C4 /* CardStyleViewController.swift */,
 				7FB69A9C26BC5B9E009E7384 /* ExchangeViewController.swift */,
 				7FB69A9E26BC5C22009E7384 /* MoreViewController.swift */,
-				7F3FE5E526CFEEE3004BE5C4 /* CardStyleViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -179,8 +183,18 @@
 			children = (
 				7F29AD4E26B99BF7009EEAD3 /* CardModel.swift */,
 				7F76085026D4FB5C002A1EF9 /* CurrencyExchangeModel.swift */,
+				7FF9DAAA26D91A7400AC74F6 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7F76085426D56514002A1EF9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7F843F1C26B94EBD005A41AE /* CardCell.swift */,
+				7F76085226D52FC8002A1EF9 /* CardStyleCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		7FB69A9226BBF390009E7384 /* UIkit */ = {
@@ -336,16 +350,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF9DAAB26D91A7400AC74F6 /* User.swift in Sources */,
+				7FF9DAA926D9027600AC74F6 /* FireStoreService.swift in Sources */,
 				7F843F1D26B94EBD005A41AE /* CardCell.swift in Sources */,
 				7F3F3E1326C1475F00C5383D /* CardSelectionViewController.swift in Sources */,
 				7F76084E26D4EC49002A1EF9 /* NetworkService.swift in Sources */,
-				7F11879626C27C3700C79420 /* RootViewController.swift in Sources */,
 				7FB69A9F26BC5C22009E7384 /* MoreViewController.swift in Sources */,
 				7F019A9126B593E7002B6E69 /* CardsViewController.swift in Sources */,
 				7F3F3E1926C1912B00C5383D /* AuthViewController.swift in Sources */,
 				7F3FE5E326CFA4E5004BE5C4 /* FireBaseAuth.swift in Sources */,
 				7FB69A9526BBF3BB009E7384 /* UIlabel + Extension.swift in Sources */,
 				7F019A8D26B593E7002B6E69 /* AppDelegate.swift in Sources */,
+				7F76085326D52FC8002A1EF9 /* CardStyleCell.swift in Sources */,
 				7F321D3D26BD31E500BF0DAA /* IsHidden NavigationControllerBar .swift in Sources */,
 				7F3FE5E626CFEEE3004BE5C4 /* CardStyleViewController.swift in Sources */,
 				7FF1149126CBECFB005D2680 /* CardAnimation.swift in Sources */,
